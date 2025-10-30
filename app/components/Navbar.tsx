@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { FaBarsStaggered, FaFacebook, FaSquareWhatsapp } from "react-icons/fa6";
-import { FaTimes } from "react-icons/fa"; 
+import { FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
