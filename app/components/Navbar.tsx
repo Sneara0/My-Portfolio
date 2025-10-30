@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-gray-400 via-green-400 to-green-200
       dark:from-green-800 dark:via-green-900 dark:to-green-950 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg
-      border-b border-gray-200 dark:border-gray-800
+      border-b border-gray-200 dark:border-gray-800 rounded-full
       shadow-lg shadow-green-400/30 dark:shadow-blue-500/30 transition-colors duration-500">
 
       <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-4">
