@@ -33,45 +33,47 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 py-20 md:py-28 px-6 md:px-20 bg-gradient-to-br from-indigo-100 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
-      
+    <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 md:gap-20 py-16 md:py-28 px-6 md:px-12 lg:px-20 bg-gradient-to-br from-gray-500 via-gray-700 to-black dark:from-pink-900 dark:via-purple-900 dark:to-black overflow-hidden">
+
       {/* 📝 Text Section */}
       <motion.div
-        className="flex-1 text-left space-y-5 md:space-y-6 z-10"
+        className="flex-1 text-center md:text-left space-y-5 md:space-y-6 z-10"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight drop-shadow-md">
-          {text}
+        <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold text-white drop-shadow-lg">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-white to-pink-600 animate-pulse">
+            {text}
+          </span>
           <Cursor cursorStyle="|" />
         </h1>
 
-        <p className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-lg drop-shadow-sm">
-          I'm <span className="font-semibold text-indigo-600 dark:text-indigo-400">Sneara Parvin</span>, a frontend developer building elegant, responsive, and user-friendly web apps with React, Next.js, and Tailwind CSS.
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 max-w-md mx-auto md:mx-0">
+          I'm <span className="font-semibold text-gray-400">Sneara Parvin</span>, a frontend developer building elegant, responsive, and user-friendly web apps with React, Next.js, and Tailwind CSS.
         </p>
 
-        <div className="flex flex-wrap gap-4 mt-6">
+        <div className="flex justify-center md:justify-start flex-wrap gap-4 mt-6">
           <Link
             href="/Sneara_Parvin_Frontend_Resume.pdf"
             target="_blank"
-            className="px-2 py-3 bg-indigo-600 text-white text-sm font-medium rounded shadow-sm hover:bg-indigo-700 hover:shadow-xl transition-all duration-300"
+            className="px-5 py-3 bg-gradient-to-r from-pink-500 via-purple-600 to-black text-white font-medium rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
           >
-            📄 Download Resume
+            ⬇️ Download Resume
           </Link>
         </div>
       </motion.div>
 
-      {/* 🌀 Rotating Skills Circle on Right */}
+      {/* 🌀 Rotating Skills Circle */}
       <motion.div
-        className="flex-1 relative flex items-center justify-center pointer-events-none"
+        className="flex-1 relative flex items-center justify-center pointer-events-none w-full md:w-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="relative w-72 h-72">
+        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
           {/* Fixed Center Text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-blue-600 dark:text-blue-400 z-20">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-pink-400 dark:text-pink-500 z-20 text-lg sm:text-xl md:text-2xl lg:text-3xl animate-pulse">
             Skills
           </div>
 
@@ -83,17 +85,17 @@ const HeroSection = () => {
           >
             {skills.map((skill, i) => {
               const angle = (i / skills.length) * 2 * Math.PI;
-              const radius = 100;
+              const radius = 90;
               return (
                 <div
                   key={i}
-                  className="absolute flex flex-col items-center justify-center text-center"
+                  className="absolute flex flex-col items-center justify-center text-center transform-gpu hover:scale-125 transition-transform duration-300"
                   style={{
                     left: `calc(50% + ${radius * Math.cos(angle)}px)`,
                     top: `calc(50% + ${radius * Math.sin(angle)}px)`,
                   }}
                 >
-                  <div className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-md">
+                  <div className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-xl hover:shadow-pink-500/50 transition-shadow duration-300">
                     {skill.icon}
                   </div>
                 </div>
